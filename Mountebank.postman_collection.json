@@ -1,0 +1,141 @@
+{
+	"info": {
+		"_postman_id": "b828e370-9a95-4c3c-988a-85b6d6a4bf94",
+		"name": "Mountebank",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Basic GET",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:1234/basic",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "1234",
+					"path": [
+						"basic"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Direct API Request",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5678/api/pet/findByStatus?status=available",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5678",
+					"path": [
+						"api",
+						"pet",
+						"findByStatus"
+					],
+					"query": [
+						{
+							"key": "status",
+							"value": "available"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Proxied API Request",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:1235/api/pet/findByStatus?status=available",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "1235",
+					"path": [
+						"api",
+						"pet",
+						"findByStatus"
+					],
+					"query": [
+						{
+							"key": "status",
+							"value": "available"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET Imposters",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:2525/imposters/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "2525",
+					"path": [
+						"imposters",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET Proxy Imposter Info",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:2525/imposters/1235",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "2525",
+					"path": [
+						"imposters",
+						"1235"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Network Error Simulation",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:1234/error",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "1234",
+					"path": [
+						"error"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
