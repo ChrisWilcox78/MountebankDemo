@@ -1,0 +1,55 @@
+{
+  "port": 1234,
+  "protocol": "http",
+  "name": "basic",
+  "recordRequests": true,
+  "stubs": [
+    {
+      "predicates": [
+        {
+          "equals": {
+            "path": "/basic",
+            "method": "GET"
+          }
+        }
+      ],
+      "responses": [
+        {
+          "is" : {
+            "statusCode": 200,
+            "headers": {
+              "Content-Type": "application/json"
+            },
+            "body": {
+              "test": true
+            }
+          }
+        }
+      ]
+    },
+    {
+      "predicates": [
+        {
+          "equals": {
+            "path": "/error",
+            "method": "GET"
+          }
+        }
+      ],
+      "responses": [
+        {
+          "fault": "CONNECTION_RESET_BY_PEER"
+        }
+      ]
+    },
+    {
+      "responses": [
+        {
+          "is": {
+            "statusCode": 404
+          }
+        }
+      ]
+    }
+  ]
+}

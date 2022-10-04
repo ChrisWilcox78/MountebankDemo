@@ -1,0 +1,8 @@
+{
+  "scripts": {
+    "start": "mb start --configfile imposters.ejs --allowInjection"
+  },
+  "dependencies": {
+    "mountebank": "^2.7.0"
+  }
+}

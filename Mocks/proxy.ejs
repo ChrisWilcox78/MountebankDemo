@@ -1,0 +1,28 @@
+{
+  "port": "1235",
+  "protocol": "http",
+  "name": "proxy",
+  "recordRequests": true,
+  "stubs": [
+    {
+      "responses": [
+        {
+          "proxy": {
+            "to": "http://localhost:5678",
+            "addWaitBehavior": true,
+            "predicateGenerators": [
+              {
+                "matches": {
+                  "path": true,
+                  "query": true,
+                  "method": true
+                }
+              }
+            ],
+            "addDecorateBehavior": "(config) => { config.response.headers['X-From-Proxy'] = 'True'; }"
+          }
+        }
+      ]
+    }
+  ]
+}

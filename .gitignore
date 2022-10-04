@@ -1,0 +1,5 @@
+node_modules
+*.log
+.mbdb
+.pytest_cache
+*.pid
